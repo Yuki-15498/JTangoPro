@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TangoCardActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/word_"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxHeight="150dp"
+            android:scrollbars="vertical"
+            android:text="誤る"
+            android:textSize="40dp" />
+
+        <TextView
+            android:id="@+id/mark_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/bt_1"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#A2CD5A"
+        android:text="有点记错"
+        android:textSize="28dp"
+        android:textColor="#ffffffff"/>
+
+    <Button
+        android:id="@+id/bt_2"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#A2CD5A"
+        android:text="有点记错"
+        android:textSize="28dp"
+        android:textColor="#ffffffff"/>
+
+    <Button
+        android:id="@+id/bt_3"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#A2CD5A"
+        android:text="有点记错"
+        android:textSize="28dp"
+        android:textColor="#ffffffff"/>
+
+    <Button
+        android:id="@+id/bt_4"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#A2CD5A"
+        android:text="有点记错"
+        android:textSize="28dp"
+        android:textColor="#ffffffff"/>
+
+    <Button
+        android:id="@+id/bt_5"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF6A6A"
+        android:text="不会"
+        android:textSize="28dp"
+        android:textColor="#ffffffff"/>
+
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <ImageView
+        android:id="@+id/n1book"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:src="@drawable/n1book"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/n1book"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="当前词书"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text1"
+        android:layout_centerHorizontal="true"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/bt_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/num"
+        android:layout_centerHorizontal="true"
+        android:text="START"
+        android:textSize="20dp"
+        android:background="@color/colorPrimaryDark"/>
+
+    <Button
+        android:id="@+id/bt_learning"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/num"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="65dp"
+        android:text="待学词库"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/bt_known"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/num"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="65dp"
+        android:text="已掌握词库"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+
+</RelativeLayout>
