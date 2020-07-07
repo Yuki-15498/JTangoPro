@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -64,6 +65,7 @@ public class StudyCardActivity extends AppCompatActivity {
         int numOfBts = words.size()>=4?4:words.size();
         words.remove(trueKana);
         List<String> falseWords = new LinkedList<>(words);
+        Collections.shuffle(falseWords);
         Button[] bts = new Button[4];
         bts[0] = bt_1;
         bts[1] = bt_2;
