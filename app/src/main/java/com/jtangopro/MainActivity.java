@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        DateCheck dc = DateCheck.getDateCheck(MainActivity.this);
+
         //显示掌握词数和总词数
         int[] nums = initRun(this);
         String showNum = nums[0] + "/" + nums[1];
@@ -54,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button bt_start = (Button) findViewById(R.id.bt_start);
+        if(dc.checkToday()){
+            bt_start.setText("继续学习");
+        }else{
+            bt_start.setText("开始学习");
+        }
         bt_start.setTextColor(Color.WHITE);
         bt_start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +87,14 @@ public class MainActivity extends AppCompatActivity {
         String showNum = nums[0] + "/" + nums[1];
         TextView textNum = (TextView) findViewById(R.id.num);
         textNum.setText(showNum);
+
+        Button bt_start = (Button) findViewById(R.id.bt_start);
+        DateCheck dc = DateCheck.getDateCheck(MainActivity.this);
+        if(dc.checkToday()){
+            bt_start.setText("继续学习");
+        }else{
+            bt_start.setText("开始学习");
+        }
     }
 
     @Override

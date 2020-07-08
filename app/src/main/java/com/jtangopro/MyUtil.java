@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -119,4 +120,12 @@ public class MyUtil {
         //返回意思的主干（‘1.’后的意思）
         return s.substring(2);
     }
+
+    public static int getDayOfMonth(int year,int month){
+        //获取某年某月的天数
+        Calendar c = Calendar.getInstance();
+        c.set(year, month, 0); //输入类型为int类型
+        return c.get(Calendar.DAY_OF_MONTH);
+    }
+
 }

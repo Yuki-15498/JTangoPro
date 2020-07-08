@@ -27,19 +27,37 @@ public class FinishActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish);
 
+        DateCheck dc = DateCheck.getDateCheck(FinishActivity.this);
+
         Intent intent = getIntent();
         PassValues pv = (PassValues) intent.getSerializableExtra("passValues");
 
         TextView congrat = (TextView) findViewById(R.id.congrat);
         TextView cnt = (TextView) findViewById(R.id.cnt);
-        TextView date = (TextView) findViewById(R.id.date);
-
-        if(pv.continueStudy(false))
-            congrat.setText("\n今日进度还差一点哦\n明日继续加油！");
-        else
-            pv.increaseAllProf();
-
+        TextView cnt_ = (TextView) findViewById(R.id.cnt_);
         Button bt_finish = (Button) findViewById(R.id.bt_finish);
+
+        String dateStr = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
+
+        //基于日期和是否完成任务的逻辑修改显示内容
+        if(pv.continueStudy(false)) {
+            if(!dc.checkToday()) {
+                congrat.setText("\n今日进度还差一点哦\n明日继续加油！");
+            }else{
+                congrat.setText("\n追加进度没完成哦\n下次请量力而行！");
+                cnt_.setText("本轮新增       已掌握单词");
+            }
+        }else {
+            pv.increaseAllProf();
+            if(!dc.checkToday()) {
+                dc.setToday();
+                bt_finish.setText(dateStr+"   打卡");
+            }else{
+                congrat.setText("\n恭喜\n追加进度已完成！");
+                cnt_.setText("本轮新增       已掌握单词");
+            }
+        }
+
         bt_finish.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -48,9 +66,6 @@ public class FinishActivity extends AppCompatActivity {
         });
 
         cnt.setText(""+pv.getCntKnown());
-
-        String dateStr = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
-        date.setText(dateStr+"   打卡\n");
 
         //熟练度写回数据库
         ArrayList<Tango> tgs = pv.getTangos();

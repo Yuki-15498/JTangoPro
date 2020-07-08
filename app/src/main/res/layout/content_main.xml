@@ -43,7 +43,7 @@
         android:layout_below="@+id/num"
         android:layout_centerHorizontal="true"
         android:text="START"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:background="@color/colorPrimaryDark"/>
 
     <Button

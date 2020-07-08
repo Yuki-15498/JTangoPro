@@ -9,12 +9,13 @@
         android:roundIcon="@drawable/icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FinishActivity"></activity>
+        <activity android:name=".CalendarActivity"></activity>
+        <activity android:name=".FinishActivity" />
         <activity android:name=".LibraryActivity" />
-        <activity android:name=".StudyCardActivity"
-            android:label="学习中"/>
         <activity
-            android:name=".StudyActivity" />
+            android:name=".StudyCardActivity"
+            android:label="学习中" />
+        <activity android:name=".StudyActivity" />
         <activity
             android:name=".SettingActivity"
             android:label="设置" />

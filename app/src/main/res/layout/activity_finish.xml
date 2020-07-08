@@ -37,23 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="确定"
-        android:textSize="40dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="bottom">
-
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:gravity="center"
-            android:text="2020/05/19   打卡\n"/>
-
-    </LinearLayout>
+        android:textSize="30dp"/>
 
 
 </LinearLayout>
