@@ -128,4 +128,62 @@ public class MyUtil {
         return c.get(Calendar.DAY_OF_MONTH);
     }
 
+    public static int[] dateToInts(String date){
+        //将字符串日期转为int数组
+        int[] rst = new int[3];
+        rst[0] = Integer.parseInt(date.substring(0,4));
+        rst[1] = Integer.parseInt(date.substring(5,7));
+        rst[2] = Integer.parseInt(date.substring(8));
+        return rst;
+    }
+
+    public static boolean isSameMonth(String date1, String date2){
+        //判断两个日期是否在同一个月
+        int[] d1 = dateToInts(date1);
+        int[] d2 = dateToInts(date2);
+        return d1[0]==d2[0]&&d1[1]==d2[1];
+    }
+
+    public static boolean isSameMonth(int[] date1, int[] date2){
+        //判断两个日期是否在同一个月
+        return date1[0]==date2[0]&&date1[1]==date2[1];
+    }
+
+    public static int dateCmp(int[] date1, int[] date2){
+        //判断两个日期的先后
+        if(date1[0]==date2[0]&&date1[1]==date2[1]&&date1[2]==date2[2]){
+            return 0;
+        }
+        int sum1 = date1[0]*10000 + date1[1]*100 + date1[2];
+        int sum2 = date2[0]*10000 + date2[1]*100 + date2[2];
+        return sum1>sum2?1:-1;
+    }
+
+    public static int monthCmp(int[] date1, int[] date2){
+        //判断两个日期月份上的先后
+        if(date1[0]==date2[0]&&date1[1]==date2[1]){
+            return 0;
+        }
+        int sum1 = date1[0]*10000 + date1[1]*100;
+        int sum2 = date2[0]*10000 + date2[1]*100;
+        return sum1>sum2?1:-1;
+    }
+
+    public static String intsToString(int[] date){
+        //int[]日期转String日期
+        StringBuilder sb = new StringBuilder();
+        sb.append(date[0]+"/");
+        if(date[1]<10){
+            sb.append("0"+date[1]+"/");
+        }else{
+            sb.append(date[1]+"/");
+        }
+        if(date[2]<10){
+            sb.append("0"+date[2]);
+        }else{
+            sb.append(date[2]);
+        }
+        return sb.toString();
+    }
+
 }

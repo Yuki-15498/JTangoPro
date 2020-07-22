@@ -20,6 +20,7 @@ import static android.content.Context.MODE_PRIVATE;
  * 3、checkMonth(int year, int month):获取某年某月的当月所有信息
  * 4、refreshDC(): 初始化DC，在点击开始学习按钮后运行
  * 5、getDaysFinished(): 获取已完成任务的所有天数
+ * 6、getStartDate():获取首次日期
  */
 
 public class DateCheck {
@@ -144,7 +145,7 @@ public class DateCheck {
         int dayOfMonth = c.get(Calendar.DAY_OF_MONTH);
         //添加
         List<Boolean> rst = new ArrayList<>(dayOfMonth);
-        for(int i=1;i<+dayOfMonth;i++){
+        for(int i=1;i<dayOfMonth;i++){
             rst.add(isDone(monthInfo,i));
         }
         return rst;
@@ -161,6 +162,19 @@ public class DateCheck {
             }
         }
         return rst;
+    }
+
+    public String getStartDate(){
+        return startDate;
+    }
+
+    public int[] getStartDateInt(){
+        //获取起始日期，返回一个数组，包含年、月、日
+        int[] date = new int[3];
+        date[0] = Integer.parseInt(startDate.substring(0,4));
+        date[1] = Integer.parseInt(startDate.substring(5,7));
+        date[2] = Integer.parseInt(startDate.substring(8));
+        return date;
     }
 
 }

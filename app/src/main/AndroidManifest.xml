@@ -9,8 +9,10 @@
         android:roundIcon="@drawable/icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CalendarActivity"></activity>
-        <activity android:name=".FinishActivity" />
+        <activity android:name=".CalendarActivity"
+            android:label="打卡日历"></activity>
+        <activity android:name=".FinishActivity"
+            android:label="结束"></activity>
         <activity android:name=".LibraryActivity" />
         <activity
             android:name=".StudyCardActivity"

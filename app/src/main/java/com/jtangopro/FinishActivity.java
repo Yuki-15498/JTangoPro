@@ -61,6 +61,7 @@ public class FinishActivity extends AppCompatActivity {
         bt_finish.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                startActivity(new Intent(FinishActivity.this,CalendarActivity.class));
                 finish();
             }
         });

@@ -113,8 +113,10 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent intent = new Intent(MainActivity.this, SettingActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(MainActivity.this, SettingActivity.class));
+            return true;
+        }else if(id == R.id.action_calendar){
+            startActivity(new Intent(MainActivity.this, CalendarActivity.class));
             return true;
         }
 
