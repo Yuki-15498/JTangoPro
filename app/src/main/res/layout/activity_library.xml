@@ -1,12 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/bt_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="总数：10000"
+            android:layout_weight="2"
+            android:textColor="@color/cardview_dark_background"
+            android:background="#F2F2F2"/>
+        <Spinner
+            android:id="@+id/sp1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/sorts"
+            android:layout_weight="5" />
+        <Button
+            android:id="@+id/bt_sort"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="升序"
+            android:layout_weight="1"
+            android:background="@drawable/border1"/>
+
+    </LinearLayout>
+
 
     <ListView
         android:id="@+id/list_view"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:drawSelectorOnTop="false"
+        android:scrollbars="vertical"
+        android:layout_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/rg"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+        <RadioButton
+            android:id="@+id/lib1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="即将\n学习"
+            android:gravity="center"
+            android:checked="true"
+            android:button="@null"
+            android:background="#D1D1D1"/>
+        <RadioButton
+            android:id="@+id/lib2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="正在\n学习"
+            android:gravity="center"
+            android:checked="false"
+            android:button="@null"
+            android:background="@drawable/border1"/>
+        <RadioButton
+            android:id="@+id/lib3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="结束\n学习"
+            android:gravity="center"
+            android:checked="false"
+            android:button="@null"
+            android:background="@drawable/border1"/>
+    </RadioGroup>
 
 </LinearLayout>

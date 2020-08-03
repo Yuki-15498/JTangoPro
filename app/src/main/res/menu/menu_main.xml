@@ -3,13 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.jtengopro.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_library"
         android:orderInCategory="100"
-        android:title="设置"
+        android:title="我的词库"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_calendar"
         android:orderInCategory="100"
         android:title="我的打卡日历"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="设置"
         app:showAsAction="never" />
 </menu>

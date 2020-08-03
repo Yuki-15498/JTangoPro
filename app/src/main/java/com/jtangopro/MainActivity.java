@@ -20,6 +20,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button bt_start;
+    private DateCheck dc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DateCheck dc = DateCheck.getDateCheck(MainActivity.this);
+        bt_start = (Button) findViewById(R.id.bt_start);
+        dc = DateCheck.getDateCheck(MainActivity.this);
 
         //显示掌握词数和总词数
         int[] nums = initRun(this);
@@ -35,45 +39,21 @@ public class MainActivity extends AppCompatActivity {
         TextView textNum = (TextView) findViewById(R.id.num);
         textNum.setText(showNum);
 
-        Button bt_learning = (Button) findViewById(R.id.bt_learning);
-        bt_learning.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, LibraryActivity.class);
-                intent.putExtra("from","bt_learning");
-                startActivity(intent);
-            }
-        });
-
-        Button bt_known = (Button) findViewById(R.id.bt_known);
-        bt_known.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, LibraryActivity.class);
-                intent.putExtra("from","bt_known");
-                startActivity(intent);
-            }
-        });
-
-        Button bt_start = (Button) findViewById(R.id.bt_start);
         if(dc.checkToday()){
             bt_start.setText("继续学习");
         }else{
             bt_start.setText("开始学习");
         }
-        bt_start.setTextColor(Color.WHITE);
         bt_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SharedPreferences ed = getSharedPreferences("setting",MODE_PRIVATE);
                 int num = ed.getInt("number_of_new",0);
                 if(num==0){
-                    Intent intent = new Intent(MainActivity.this, SettingActivity.class);
-                    startActivity(intent);
+                    startActivity(new Intent(MainActivity.this, SettingActivity.class));
                     Toast.makeText(MainActivity.this, "请先设置！", Toast.LENGTH_SHORT).show();
                 }else{
-                    Intent intent = new Intent(MainActivity.this, StudyActivity.class);
-                    startActivity(intent);
+                    startActivity(new Intent(MainActivity.this, StudyActivity.class));
                 }
             }
         });
@@ -88,8 +68,6 @@ public class MainActivity extends AppCompatActivity {
         TextView textNum = (TextView) findViewById(R.id.num);
         textNum.setText(showNum);
 
-        Button bt_start = (Button) findViewById(R.id.bt_start);
-        DateCheck dc = DateCheck.getDateCheck(MainActivity.this);
         if(dc.checkToday()){
             bt_start.setText("继续学习");
         }else{
@@ -117,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }else if(id == R.id.action_calendar){
             startActivity(new Intent(MainActivity.this, CalendarActivity.class));
+            return true;
+        }else if(id == R.id.action_library){
+            startActivity(new Intent(MainActivity.this, LibraryActivity.class));
             return true;
         }
 

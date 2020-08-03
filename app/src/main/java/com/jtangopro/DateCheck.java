@@ -145,7 +145,7 @@ public class DateCheck {
         int dayOfMonth = c.get(Calendar.DAY_OF_MONTH);
         //添加
         List<Boolean> rst = new ArrayList<>(dayOfMonth);
-        for(int i=1;i<dayOfMonth;i++){
+        for(int i=1;i<=dayOfMonth;i++){
             rst.add(isDone(monthInfo,i));
         }
         return rst;

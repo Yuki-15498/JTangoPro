@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sorts">
+        <item>按字典排序 </item>
+        <item>按熟练度排序</item>
+        <item>按首次学习日期排序</item>
+    </string-array>
+</resources>

@@ -8,14 +8,9 @@ package com.jtangopro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.SimpleAdapter;
@@ -42,7 +37,7 @@ public class CalendarActivity extends AppCompatActivity {
     //传入适配器的数据
     private List<Map<String, Object>> data_list = new ArrayList<Map<String, Object>>();
     //date代表选中的日期，当月默认今天，非当月（往月）默认1号
-    private String date, today, startDate;
+    private String date, today;
     private int[] dateInts, todayInts, startDateInts;
 
     DateCheck dc;
@@ -56,12 +51,9 @@ public class CalendarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calendar);
 
         dc = DateCheck.getDateCheck(CalendarActivity.this);
-        Button bt_l = (Button) findViewById(R.id.bt_left);
-        Button bt_r = (Button) findViewById(R.id.bt_right);
         state = (TextView) findViewById(R.id.state);
 
         //获取起始日期和今日日期
-        startDate = dc.getStartDate();
         date = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
         today = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
         startDateInts = dc.getStartDateInt();
@@ -89,7 +81,7 @@ public class CalendarActivity extends AppCompatActivity {
             }
         });
 
-        bt_l.setOnClickListener(new View.OnClickListener(){
+        findViewById(R.id.bt_left).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 monthBack();
@@ -97,7 +89,7 @@ public class CalendarActivity extends AppCompatActivity {
             }
         });
 
-        bt_r.setOnClickListener(new View.OnClickListener(){
+        findViewById(R.id.bt_right).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 monthForward();
@@ -287,5 +279,4 @@ public class CalendarActivity extends AppCompatActivity {
         }
         return index-i+1;
     }
-
 }
