@@ -11,10 +11,12 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -43,6 +45,16 @@ public class StudyCardActivity extends AppCompatActivity {
         final Button bt_3 = (Button) findViewById(R.id.bt_3);
         final Button bt_4 = (Button) findViewById(R.id.bt_4);
         final Button bt_5 = (Button) findViewById(R.id.bt_5);
+        //自适应宽度
+        Display display = this.getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display.getSize(point);
+        int btWidth = (int) (point.x*0.92);
+        bt_1.getLayoutParams().width = btWidth;
+        bt_2.getLayoutParams().width = btWidth;
+        bt_3.getLayoutParams().width = btWidth;
+        bt_4.getLayoutParams().width = btWidth;
+        bt_5.getLayoutParams().width = btWidth;
 
         word_.setMovementMethod(ScrollingMovementMethod.getInstance());
 
@@ -145,7 +157,7 @@ public class StudyCardActivity extends AppCompatActivity {
                 finish();
             }
         });
-        bt.setBackgroundColor(Color.parseColor("#FF6A6A"));
+        bt.setBackground(getResources().getDrawable(R.drawable.myrec3));
     }
 
     private void setButtonKnown(Button bt, final Intent intent){
@@ -165,6 +177,7 @@ public class StudyCardActivity extends AppCompatActivity {
                 finish();
             }
         });
+        bt.setBackground(getResources().getDrawable(R.drawable.myrec2));
     }
 
     private void setButtonHalf(Button bt,final Intent intent){
@@ -179,7 +192,7 @@ public class StudyCardActivity extends AppCompatActivity {
                 finish();
             }
         });
-        bt.setBackgroundColor(Color.parseColor("#FF6600"));
+        bt.setBackground(getResources().getDrawable(R.drawable.myrec4));
     }
 
     private void setButtonTrue(final Button bt, final Intent intent){
@@ -187,7 +200,7 @@ public class StudyCardActivity extends AppCompatActivity {
         bt.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                bt.setBackgroundColor(Color.GREEN);
+                bt.setBackground(getResources().getDrawable(R.drawable.myrec5));
                 pv.setTangeCardType("tangocard3");
                 pv.setCurProf(pv.getCurProf()+1);
                 intent.putExtra("passValues",(Serializable) pv);
@@ -202,7 +215,7 @@ public class StudyCardActivity extends AppCompatActivity {
         bt.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                bt.setBackgroundColor(Color.RED);
+                bt.setBackground(getResources().getDrawable(R.drawable.myrec3));
                 pv.setTangeCardType("tangocard3");
                 intent.putExtra("passValues",(Serializable) pv);
                 startActivity(intent);

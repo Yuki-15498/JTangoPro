@@ -38,14 +38,16 @@
 
     <Button
         android:id="@+id/bt_start"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/num"
         android:layout_centerHorizontal="true"
         android:text="START"
+        android:textStyle="bold"
         android:textSize="25dp"
-        android:textColor="#ffffffff"
-        android:background="@color/colorPrimaryDark"/>
-
+        android:textColor="#ff000000"
+        android:background="@drawable/myrec"/>
+    
 
 </RelativeLayout>

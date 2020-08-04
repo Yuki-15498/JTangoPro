@@ -5,6 +5,7 @@ package com.jtangopro;
  */
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.app.AlertDialog;
 import android.content.ContentValues;
@@ -14,11 +15,14 @@ import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -105,6 +109,17 @@ public class TangoCardActivity extends AppCompatActivity {
         final Button bt_1 = (Button) findViewById(R.id.bt_1);
         final Button bt_2 = (Button) findViewById(R.id.bt_2);
         final Button bt_3 = (Button) findViewById(R.id.bt_3);
+
+        //自适应宽度
+        Display display = this.getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display.getSize(point);
+        int btWidth = (int) (point.x*0.95);
+        bt_1.getLayoutParams().width = btWidth;
+        bt_2.getLayoutParams().width = btWidth;
+        CardView cv = findViewById(R.id.tangocard);
+        int cvheight = (int) (point.y*0.5);
+        cv.getLayoutParams().height = cvheight;
 
         //记错按钮
         bt_1.setOnClickListener(new View.OnClickListener() {

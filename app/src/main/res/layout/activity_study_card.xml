@@ -11,23 +11,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <TextView
-            android:id="@+id/word_"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:maxHeight="150dp"
-            android:scrollbars="vertical"
-            android:text="誤る"
-            android:textSize="40dp" />
 
-        <TextView
-            android:id="@+id/mark_"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"/>
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:layout_margin="20dp"
+            card:cardBackgroundColor="#66ccff"
+            card:cardCornerRadius="10dp"
+            card:cardElevation="10dp"
+            card:cardMaxElevation="10dp">
+            <TextView
+                android:id="@+id/word_"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxHeight="180dp"
+                android:scrollbars="vertical"
+                android:text="誤る"
+                android:textSize="40dp"
+                android:textColor="#ffffffff"/>
+            <TextView
+                android:id="@+id/mark_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#ffffffff"/>
+        </androidx.cardview.widget.CardView>
+
     </RelativeLayout>
 
     <Button
@@ -35,7 +49,8 @@
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#A2CD5A"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/myrec2"
         android:text="有点记错"
         android:textSize="28dp"
         android:textColor="#ffffffff"/>
@@ -45,7 +60,8 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#A2CD5A"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/myrec2"
         android:text="有点记错"
         android:textSize="28dp"
         android:textColor="#ffffffff"/>
@@ -55,7 +71,8 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#A2CD5A"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/myrec2"
         android:text="有点记错"
         android:textSize="28dp"
         android:textColor="#ffffffff"/>
@@ -65,7 +82,8 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#A2CD5A"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/myrec2"
         android:text="有点记错"
         android:textSize="28dp"
         android:textColor="#ffffffff"/>
@@ -75,7 +93,8 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FF6A6A"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/myrec3"
         android:text="不会"
         android:textSize="28dp"
         android:textColor="#ffffffff"/>
